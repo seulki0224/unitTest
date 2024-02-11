@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="sample">aaa가나다라마마마</div>
+        <div class="sample">나다 라마마마</div>
+        <div class="sample">a가다라마 function 마마</div>
+        <div class="sample">다라if마마마</div>
+        <div class="sample">아121414215마</div>
+        <div class="sample">a가다라마마마</div>
+        <div class="sample">다 if 라마function마마</div>
+        <div class="sample">마마</div>
+        <div class="sample">
+        가나다라 마aaaa다다다
+        다
+        function
+        </div>
+        <div class="sample">5555555</div>
+    </div>
+
+    <script>
+
+        let mainString = function(){
+            //console.log("1. class안에 있는 문장 배열로 불러오기")
+            let elements = document.querySelectorAll(".sample");
+            //console.log(elements);
+
+            //console.log("2. 새로운 배열공간 생성")
+            let texts = [];
+            //console.log(texts);
+
+            //console.log("3. div노드 안에 있는텍스트만 뽑아서 배열에 넣기")
+            function array_ () { 
+                elements.forEach(element => {
+                    const text = element.innerHTML;
+                    texts.push(text);
+                })
+                return texts;
+            }
+            //console.log(array_());
+
+            //console.log("4. 문자열 정리하기 시작")
+            let replace = function(){
+                //console.log("배열을 문자열로 결합")
+                let toArray = array_().join(" ");
+                //console.log('toArray = ', toArray);                
+
+                let splitSentenceByType = function (toArray) {
+                    // 영어, 숫자, 한글을 각각 나타내는 정규 표현식
+                    const englishRegex = /[a-zA-Z]+/g;
+                    const koreanRegex = /[ㄱ-ㅎㅏ-ㅣ가-힣]+/g;
+                    const numberRegex = /\d+/g;
+
+                    // 영어, 숫자, 한글을 나타내는 배열 초기화
+                    let englishArray = [];
+                    let koreanArray = [];
+                    let numberArray = [];
+                    
+                    // 문장을 단어 단위로 분리
+                    function resultRegex () {
+                        let englishWords = toArray.match(englishRegex);
+                        console.log(englishWords);
+
+                        let koreanWords = toArray.match(koreanRegex);
+                        console.log(koreanWords);
+
+                        let numberWords = toArray.match(numberRegex); 
+                        console.log(numberWords);
+
+                        //콤마로 구분 문장으로 뿌리기
+                        let result = englishWords + koreanWords + numberWords;
+                        console.log(result);
+                        return result;
+
+                        //배열로 뿌리기
+                        //const arrayResult = result.split(',');
+                        //console.log(arrayResult);  
+                    }
+                    resultRegex();
+                }
+                splitSentenceByType(toArray);
+            }
+            replace();
+        }
+        mainString();
+
+        
+        
+
+        /*
+        let a ="a";
+        let b ="다";
+        let c = "function";
+        let color_b = "blue";
+        let color_o = "red";
+        let color_g = "green";
+     
+        if (search.includes(a)) {
+                console.log(a, "문자열이 포함되어 있습니다.");
+                element.innerHTML = search.replace(new RegExp(a, "g"),
+                                    `<span style="color: ${color_b};">${a}</span>`
+                                    )
+            } else if (search.includes("나")) {
+                console.log("나", "나가 포함되어 있습니다.");
+                element.innerHTML = search.replace(new RegExp("나", "g"),
+                                    `<span style="color: green;">나</span>`
+                                    )
+            } else if (search.includes(b)) {
+                console.log(b, "다가 포함되어 있습니다.");
+                element.innerHTML = search.replace(new RegExp(b, "g"),
+                                    `<span style="color: ${color_o};">${b}</span>`
+                                    )
+            } else if (search.includes(c)) {
+                console.log(b, "다가 포함되어 있습니다.");
+                element.innerHTML = search.replace(new RegExp(c, "g"),
+                                    `<span style="color: ${color_g};">${c}</span>`
+                                    )
+            } else {
+                console.log("어떤 문자열도 포함되어 있지 않습니다.");
+            }
+        })
+        */
+
+  </script>
+    
+</body>
+</html>
