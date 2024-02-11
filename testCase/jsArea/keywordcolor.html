@@ -63,25 +63,22 @@
                     
                     // 문장을 단어 단위로 분리
                     function resultRegex () {
-                        let englishWords = toArray.match(englishRegex);
-                        console.log(englishWords);
+                        let engWR = toArray.match(englishRegex); 
+                        let korWR = toArray.match(koreanRegex); 
+                        let numWR = toArray.match(numberRegex);
 
-                        let koreanWords = toArray.match(koreanRegex);
-                        console.log(koreanWords);
-
-                        let numberWords = toArray.match(numberRegex); 
-                        console.log(numberWords);
-
-                        //콤마로 구분 문장으로 뿌리기
-                        let result = englishWords + koreanWords + numberWords;
-                        console.log(result);
-                        return result;
-
-                        //배열로 뿌리기
-                        //const arrayResult = result.split(',');
-                        //console.log(arrayResult);  
+                        let resultArray = [];
+                        resultArray.push(...engWR);
+                        resultArray.push(...korWR);
+                        resultArray.push(...numWR);
+                        
+                        console.log(resultArray);
+                        return raResult = resultArray;
                     }
                     resultRegex();
+                    //배열로 뿌리기
+                    let oneArrList = raResult.join(" ");
+                    console.log(oneArrList);
                 }
                 splitSentenceByType(toArray);
             }
