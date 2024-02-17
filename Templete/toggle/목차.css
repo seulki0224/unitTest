@@ -1,0 +1,33 @@
+.title {
+    font-size: 15px;
+    line-height: 40px;
+}
+.title li, .title ul {
+    list-style: none;
+}
+.title .chList li,
+.title .soList li {
+    width: 100%;
+    min-width: 800px;
+    display: inline-block;
+}
+.title ul li ul li span,
+.title ul li ul li ul li span {
+    width: 50%;
+    display: inline-block;
+    float: right;
+}
+.chList{
+    display:inline-block;
+}
+
+
+.title ul li h1:hover, .title ul li h2:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.title li:hover{
+    color: blue;
+    cursor: pointer;
+}

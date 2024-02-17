@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일자동오픈</title>
+</head>
+<body>
+    <script>
+        let liveURL = 'http://127.0.0.1:5500/unitTest/fileOpen.html';
+        //let localURL = 'file:///Users/soominbae/Desktop/%ED%8C%A8%EC%BA%A0/workspace/unitTest/fileOpen.html';
+        let localURL = '/Users/soominbae/Desktop/패캠/workspace/unitTest/fileOpen.html';
+        let fileName = 'unitTest/fileOpen.html';
+        let link = '/Users/soominbae/Desktop/패캠/프론트엔드 파트 강의자료/HTML, CSS, JS로 만드는 스타벅스 웹사이트 소스파일 안내.pdf';    
+        let PDF = '/Users/soominbae/Desktop/%E1%84%91%E1%85%A2%E1%84%8F%E1%85%A2%E1%86%B7/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%86%AB%E1%84%90%E1%85%B3%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%83%E1%85%B3%20%E1%84%91%E1%85%A1%E1%84%90%E1%85%B3%20%E1%84%80%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B4%E1%84%8C%E1%85%A1%E1%84%85%E1%85%AD/HTML,%20CSS,%20JS%EB%A1%9C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4%20%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EC%86%8C%EC%8A%A4%ED%8C%8C%EC%9D%BC%20%EC%95%88%EB%82%B4.pdf';
+ 
+        let currentURL = window.location.href;
+        console.log(currentURL);       
+        
+        let goLink = function(){liveURL.replace(liveURL, PDF)};
+        
+    </script>
+<!-- 
+    <input type="file" id="fileInput">
+    <button onclick="openLocalPdf()">PDF 파일 열기</button> -->
+    <script>
+        /* ----------------------------------------
+            openLocalPdf()             
+            파일 입력 요소를 통해 사용자가 PDF 파일을 선택하고, 
+            그 파일을 읽어와 브라우저의 새 창에 열어주는 역할.
+        ----------------------------------------*/
+        function openLocalPdf() {
+            
+            // 파일 입력 요소 가져오기
+            let fileInput = document.getElementById('fileInput');
+            // 파일이 선택되었는지 확인
+            if (fileInput.files.length > 0) {
+                // 첫 번째로 선택된 파일 가져오기
+                let file = fileInput.files[0];
+                
+                //file URL 생성
+                let fileURL = URL.createObjectURL(file);
+                console.log('파일 URL:', fileURL);
+                // 여기서 파일 URL을 사용하여 처리하거나 표시할 수 있습니다.
+                // 예: PDF 뷰어로 열기
+                window.open(fileURL, '_blank');
+            } else {
+                alert('PDF 파일을 선택하세요.');
+            }
+        }
+    </script>
+</body>
+</html>

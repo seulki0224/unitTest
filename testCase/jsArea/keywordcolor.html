@@ -7,122 +7,132 @@
 </head>
 <body>
     <div>
-        <div class="sample">aaa가나다라마마마</div>
-        <div class="sample">나다 라마마마</div>
-        <div class="sample">a가다라마 function 마마</div>
-        <div class="sample">다라if마마마</div>
-        <div class="sample">아121414215마</div>
-        <div class="sample">a가다라마마마</div>
-        <div class="sample">다 if 라마function마마</div>
-        <div class="sample">마마</div>
-        <div class="sample">
-        가나다라 마aaaa다다다
-        다
-        function
-        </div>
-        <div class="sample">5555555</div>
+        <div class="sample">0 aaa가나다라마마마</div>
+        <div class="sample">1 function 나다 라마마마</div>
+        <div class="sample">2 a가다라마 function 마마</div>
+        <div class="sample">3 다라if마마마</div>
+        <div class="sample">4 아121414215마</div>
+        <div class="sample">5 a가aaa다라마마마</div>
+        <div class="sample">6 다 if 라마function마마</div>
+        <div class="sample">7 마마</div>
     </div>
-
     <script>
-
-        let mainString = function(){
+        let stringArray;
+        let str_arr;
+        let resultArray;
+        let newSTR ;
+        let strList;
+        let oneArrList;
+        let newReplace;
+        let elements;
+        //let elements = document.querySelectorAll(".sample");
+        let searchString; //inputString(".box");
+        function inputString( selects = '' ){
+            console.log("선택한클래스 => ", `${selects}`);  
+            elements = document.querySelectorAll(`${selects}`);
+        }
+        let tTexts; //targetText("word");
+        function targetText ( tText = '' ) {
+            console.log("찾는 단어 => ", `${tText}`);
+            tTexts = (`${tText}`);
+        }
+        inputString (".sample");
+        targetText("aaa");
+        
+        let a ="a";
+        let b ="다";
+        let c = "function";
+        let color_a = "blue";
+        let color_b = "red";
+        let color_c = "green";
+        let targetColor;
+        let targetText_a = "마마";
+        let targetColor_a = "blue";
+        function mainString(){
             //console.log("1. class안에 있는 문장 배열로 불러오기")
-            let elements = document.querySelectorAll(".sample");
-            //console.log(elements);
-
+            
             //console.log("2. 새로운 배열공간 생성")
             let texts = [];
-            //console.log(texts);
-
             //console.log("3. div노드 안에 있는텍스트만 뽑아서 배열에 넣기")
             function array_ () { 
-                elements.forEach(element => {
-                    const text = element.innerHTML;
+                elements.forEach(elements => {
+                    const text = elements.innerHTML;
                     texts.push(text);
                 })
                 return texts;
             }
-            //console.log(array_());
-
             //console.log("4. 문자열 정리하기 시작")
-            let replace = function(){
+            function replace(){
                 //console.log("배열을 문자열로 결합")
-                let toArray = array_().join(" ");
-                //console.log('toArray = ', toArray);                
-
-                let splitSentenceByType = function (toArray) {
+                let toArray = array_().join(" ");         
+                function splitSentenceByType (toArray) {
                     // 영어, 숫자, 한글을 각각 나타내는 정규 표현식
                     const englishRegex = /[a-zA-Z]+/g;
                     const koreanRegex = /[ㄱ-ㅎㅏ-ㅣ가-힣]+/g;
                     const numberRegex = /\d+/g;
-
                     // 영어, 숫자, 한글을 나타내는 배열 초기화
                     let englishArray = [];
                     let koreanArray = [];
                     let numberArray = [];
                     
                     // 문장을 단어 단위로 분리
-                    function resultRegex () {
+                    function resultRegex() {
                         let engWR = toArray.match(englishRegex); 
                         let korWR = toArray.match(koreanRegex); 
                         let numWR = toArray.match(numberRegex);
-
-                        let resultArray = [];
+                        resultArray = [];
                         resultArray.push(...engWR);
                         resultArray.push(...korWR);
                         resultArray.push(...numWR);
-                        
-                        console.log(resultArray);
-                        return raResult = resultArray;
+                        //배열로 뿌리기
+                        //console.log(resultArray);
+                        newReplace = [...resultArray];
+                        //console.log(newReplace);
+                        return newReplace;
+                        //문장으로 뿌리기
+                        //oneArrList = newReplace.join(", ");
+                        //console.log(oneArrList);
                     }
                     resultRegex();
-                    //배열로 뿌리기
-                    let oneArrList = raResult.join(" ");
-                    console.log(oneArrList);
                 }
-                splitSentenceByType(toArray);
+                splitSentenceByType (toArray);
             }
             replace();
-        }
+            console.log(newReplace);
+            newReplace.forEach( function ( element, index ) {
+                str_arr = newReplace.textContent;
+                if (element.includes(tTexts)) {
+                    console.log(index,"에서", tTexts,"가 확인되어", `${color_a}`,"으로  글자색이 변경됩니다.");
+                    elements[index].innerHTML = element.replace(new RegExp(tTexts, "g"),
+                        `<span style="color:${color_a};">${tTexts}</span>
+`
+                    )
+                } else if (element.includes(targetText_a)) {
+                    console.log(index,"에서", `${targetText_a}`,"가 확인되어 노란색으로  글자색이 변경됩니다.");
+                    elements.innerHTML = element.replace(new RegExp(`${targetText_a}`, "g"),
+                        `<span style="color: ${color_b};">${targetText_a}</span>
+`
+                    )
+                } 
+                /*
+                else if (element.includes("function")) {
+                    element.innerHTML = element.replace(new RegExp("ff", "g"),
+                        "이건아님"
+                    )
+                    console.log(index,"에서 문자 ff가 확인되어 이건아님으로 글자를 변경합니다.");   
+                } else if (element.includes("나")) {
+                    element.innerHTML = element.replace(new RegExp("나", "g"),
+                    `<span style="color: orangered;">나</span>
+`
+                    )
+                    console.log(index, "글자 나 가 포함되어 오렌지색으로 색이 변경 됩니다.");
+                }
+                */
+                 else {console.log(index, "없음 변경하지 않음");}
+            });
+        }          
         mainString();
-
-        
-        
-
-        /*
-        let a ="a";
-        let b ="다";
-        let c = "function";
-        let color_b = "blue";
-        let color_o = "red";
-        let color_g = "green";
-     
-        if (search.includes(a)) {
-                console.log(a, "문자열이 포함되어 있습니다.");
-                element.innerHTML = search.replace(new RegExp(a, "g"),
-                                    `<span style="color: ${color_b};">${a}</span>`
-                                    )
-            } else if (search.includes("나")) {
-                console.log("나", "나가 포함되어 있습니다.");
-                element.innerHTML = search.replace(new RegExp("나", "g"),
-                                    `<span style="color: green;">나</span>`
-                                    )
-            } else if (search.includes(b)) {
-                console.log(b, "다가 포함되어 있습니다.");
-                element.innerHTML = search.replace(new RegExp(b, "g"),
-                                    `<span style="color: ${color_o};">${b}</span>`
-                                    )
-            } else if (search.includes(c)) {
-                console.log(b, "다가 포함되어 있습니다.");
-                element.innerHTML = search.replace(new RegExp(c, "g"),
-                                    `<span style="color: ${color_g};">${c}</span>`
-                                    )
-            } else {
-                console.log("어떤 문자열도 포함되어 있지 않습니다.");
-            }
-        })
-        */
-
+      
   </script>
     
 </body>

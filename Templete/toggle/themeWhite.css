@@ -1,0 +1,177 @@
+/*
+White css
+*/
+*{
+    margin: 0;
+    background: white;
+    /* background: rgb(1, 40, 2); */
+}
+nav{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px;
+    background: rgba(128, 128, 128, 0.1);
+}
+nav a {
+    font-size: 12px;
+    line-height: 20px;
+    width: 50px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px gray;
+    background: white;
+    color: black;
+    text-decoration: none
+}
+h1,h2,h3,h4 {
+    padding: 8px 5px;
+    color: black;
+}
+.btn{
+    width: 50px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 5px 0;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px gray;
+    background: none;
+}
+.btn:hover{
+    background: rgb(205, 205, 205);
+    box-shadow: 1px 1px 5px gray;
+}
+.mainBox{
+    margin: 0 5px 5px 5px;
+    padding: 0px 0px 0 5px;
+    line-height: 30px;
+    font-size: 15px;
+    background: white;
+    /* background: rgba(128, 128, 128, 0.2); */
+    border: 1px solid rgba(128, 128, 128, 0.1);
+}
+.mainBox > pre {
+    line-height: 20px;
+    font-size: 10px;
+    margin: 0px 0px -15px -70px;
+    padding-top:5px;
+    color:rgb(1, 63, 169);
+    background:none;
+}
+/* .mainBox > .inbox{ */
+.mainBox .inbox{
+    padding: 0px 0px 1px 5px;
+    margin: 0 0 1px -5px;
+    line-height: 30px;
+    font-size: 13px;
+    background:rgba(128, 128, 128, 0.082);
+    border-bottom: 1px solid white;
+    /* display: block; */
+}
+
+.mainBox .inbox > pre{
+/* .mainBox .inbox pre{ */
+    padding-top: 5px ;
+    margin: 0px 0px -15px -75px;
+    line-height: 20px;
+    font-size: 11px;
+    background: none;
+    /* display: block; */
+}
+/*  */
+key{
+    color: blue;
+    background: none;
+    font-size: 13px;
+    /* display: block; */
+}
+key::before{ 
+    content: "# ";
+}
+key::after{ 
+    content: "  ";
+}
+com { 
+    color: green;
+    background: none;
+}
+com::before{
+    content: "/* ";
+}
+com::after{ 
+    content: " */ ";
+}
+result { 
+    color: red;
+    background: none;
+}
+result::before{
+    content: "> ";
+}
+this{
+    background: none;
+    color:rgb(1, 65, 255);
+    font-weight: bold;
+}
+go{
+    color:rgb(255, 37, 197);
+    font-weight: bold;
+}
+go::before{
+    content: "> ";
+}
+
+.keywordtitle   {
+    display: block;
+    margin-top: 500px;
+    right: 20px;
+    position: fixed; 
+    top: 0;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 10px 23px;
+    border-radius: 500px;
+    background: white;
+    color:black;
+    font-size: 2em;
+    font-weight: bold;
+    transition: 0.1s;
+    }
+.keyword    {
+    cursor: pointer;
+    display: none;
+    border: 1px solid  rgb(168, 192, 168);
+    background: rgb(206, 227, 206);
+    z-index: 1000;
+    position: fixed; 
+    padding: 10px;
+    width: 80vw;
+    left: 100px;
+    top:100px;
+    }
+.keyword.dp_none    {
+    display: inline-block;
+    }
+.keyword pre    {
+    margin: 0;
+    padding: 0;
+    }
+.keyword li {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    list-style: none;
+    }
+.keyword ul {
+    color:white;
+    margin: 0px;
+    padding: 5px 0 20px 20px;
+    }

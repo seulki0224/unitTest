@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ch1.Node.js</title>
+    <link rel="stylesheet" href="./themeWhite.css">
+    <script defer src="./theme.js"></script>
+    <link rel="stylesheet" href="./목차.css">
+    <script defer src="./목차.js"></script>
+    <style>
+    .title{
+        font-size: 0.65em;
+        line-height: 20px;
+    }
+    .title, .chList{
+        margin-left: -40px;
+    }
+    
+    .h3subList{ display: block; cursor: pointer;}
+    .ishidden {
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- 1. partList > 2. chList > 3. subList  -->
+     <div class="title">       
+        <ul class="partList">
+            <li><h1 id="part2">2. Part 2. JavaScript Essentials</h1></li>
+                <ul class="chList" >
+                    <li id="ch1"><h2>Ch 1. Node.js</h2></li>
+                </ul>
+                <ul class="subList" id="sub1">
+                    <li class = "_01">01. 개요 및 설치<span>00:11:09</span></li>
+                    <li>02. NVM 사용법<span>00:07:46</span></li>
+                    <li>03. NPM 개요(1)<span>00:05:25</span></li>
+                    <li>04. NPM 개요(2)<span>00:13:27</span></li>
+                    <li>05. 개발 서버 실행과 빌드<span>00:13:16</span></li>
+                    <li>06. 유의적 버전(SemVer)<span>00:11:20</span></li>
+                    <li>07. NPM 프로젝트의 버전 관리(.gitignore)<span>00:09:18</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="mainBox">
+        <h3 class="h3subList">01.개요 및 설치</h3>
+        <div class="inbox">
+            [NVM] node version Manager 설치 
+        </div>
+        <key>NVM</key>
+        <pre>
+            google > nvm
+            <go>https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating</go>
+        
+            Install & Update Script
+            터미널에 복붙 설치
+            <go>> curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</go>
+            
+            버전확인
+            <go>> nvm --version</go>
+            <result>0.39.7</result>
+        </pre>
+    </div>
+
+    <div class="mainBox">
+        <h3 class="h3subList">02. NVM 사용법</h3>
+        <div class="inbox">
+            NVM을 통한 Node JS 설치 및 버전관리방법
+        </div>
+        <key>Node JS</key>
+        <pre>
+            터미널
+            <com>nvm list 확인</com>
+            <go>> nvm ls</go>
+
+            NodeJS 버전 확인해서 NVM을 통해 설치
+            그냥 설치하면 이미 설치된 NodeJS랑 부딪히므로 NVM사용
+            연습할떄는 최신버전 사용 웬만하면 LTS 설치하세요.(안정적인 짝수번호)
+
+            <com>NodeJS 버전 확인</com>
+            <go>https://nodejs.org</go> 
+            
+            <com>nvm 설치</com>
+            <go>> nvm install <this>20.11.1</this></go>
+
+            <com>최신버전 추가설치</com>
+            <go>nvm install <this>21.6.2</this></go>
+
+            <com>어떤 버전을 쓸지 선택</com>
+            <go>nvm use 20.11.1</go>
+
+            <go>nvm ls</go>
+            <result> <this>-> v20.11.1</this>
+                v21.6.2</result>
+
+            <com>node JS 버전 확인
+                nvm use 20.11.1랑 같이 적용됨
+            </com>
+            <go>node --version</go>
+            <result>v20.11.1</result>
+
+            <com>해당 버전 삭제</com>
+            <go>nvm uninstall 12.21.0</go>
+
+            <com>nvm 으로 사용할수 있는 명령 확인</com>
+            <go>nvm --help</go>
+        </pre>
+    </div>
+
+    <div class="mainBox">
+        <h3 class="h3subList ">03. NPM 개요(1)</h3>
+        <div class="inbox">
+           [NPM] Node Package Manager
+        </div>
+        <key>NPM</key>
+        <pre>
+            
+            
+        </pre>
+    </div>
+
+    <div class="mainBox">
+        <h3 class="h3subList">04. NPM 개요(2)</h3>
+        <div class="inbox">
+           
+        </div>
+        <key></key>
+        <pre>
+            
+            
+        </pre>
+    </div>
+
+    <script>
+        const ex2_2 = function () { 
+            navEls.forEach(
+                function(index){
+                    index.classList.add(`${index + 1}`);
+                    console.log("index : ", index);
+                    //console.log("navEls : ", navEls);
+                }
+            );
+        };
+    </script>
+</body>
+</html>

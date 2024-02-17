@@ -21,19 +21,14 @@
         function
         </div>
     </div>
-
     <script>
-
         let mainString = function(){
-
             console.log("1. class안에 있는 문장 배열로 불러오기")
             let elements = document.querySelectorAll(".sample");
             console.log(elements);
-
             console.log("2. 새로운 배열공간 생성")
             let texts = [];
             console.log(texts);
-
             console.log("3. div노드 안에 있는텍스트만 뽑아서 배열에 넣기")
             function array_ () { 
                 elements.forEach(element => {
@@ -43,11 +38,8 @@
                 return texts;
             }
             console.log(array_());
-
             console.log("4. 문자열 정리하기")
-
             let replace = function(){
-
                 console.log("배열을 문자열로 결합")
                 let toArray = array_().join(" ");
                 console.log(toArray);
@@ -57,7 +49,6 @@
                 let tempFun = function () {
                     
                     console.log("영 / 한 / 숫 기준으로 분리");
-
                     let toType = function splitStringByType(toArray) {
                         // 영어, 한글, 숫자를 각각 나타내는 정규 표현식
                         const englishRegex = /[a-zA-Z]/g;
@@ -76,48 +67,40 @@
                             number: numberArray
                         };
                     };
-
                     // 문자열을 영어, 한글, 숫자로 분리
                     const result = toType(toArray);
-
                     // 결과 출력
                     console.log("영어:", result.english);
                     console.log("한글:", result.korean);
                     console.log("숫자:", result.number);
                 }
                 */
-
                 /*
                 console.log("띄어쓰기 기준으로 배열로 분리")
                 let toSplit = toArray.split(" ");
                 console.log(toSplit);
-
                 console.log("공백제거");
                 let filteredArray = toSplit.filter(item => item.trim() !== "");
                 console.log(filteredArray);
-
                 console.log("엔터제거")
                 let newArray = filteredArray.filter(item => !item.includes('\n'));
                 console.log(newArray);
                 */
-
                 console.log("4. 문자열 정리완료");
-                let result2 = toType(toArray);
-                return result2;
+                
+                //let result2 = toType(toArray);
+                //return result2;
             }
             console.log(replace());            
         }
-
             // 배열로 변환된 텍스트 하나로 합치기
             /*
             let combinedArray = array_().reduce((acc, curr) => acc.concat(curr), []);
             let resultString = combinedArray.join(', ');
             */
             //console.log(resultString);
-
            // let search = replace.textContent;
            // console.log(search);
-
         mainString();
         
         let a ="a";
@@ -128,33 +111,35 @@
         let color_g = "green";
          //div.box.order-1 0
         /*      
-
         if (search.includes(a)) {
                 console.log(a, "문자열이 포함되어 있습니다.");
                 element.innerHTML = search.replace(new RegExp(a, "g"),
-                                    `<span style="color: ${color_b};">${a}</span>`
+                                    `<span style="color: ${color_b};">${a}</span>
+`
                                     )
             } else if (search.includes("나")) {
                 console.log("나", "나가 포함되어 있습니다.");
                 element.innerHTML = search.replace(new RegExp("나", "g"),
-                                    `<span style="color: green;">나</span>`
+                                    `<span style="color: green;">나</span>
+`
                                     )
             } else if (search.includes(b)) {
                 console.log(b, "다가 포함되어 있습니다.");
                 element.innerHTML = search.replace(new RegExp(b, "g"),
-                                    `<span style="color: ${color_o};">${b}</span>`
+                                    `<span style="color: ${color_o};">${b}</span>
+`
                                     )
             } else if (search.includes(c)) {
                 console.log(b, "다가 포함되어 있습니다.");
                 element.innerHTML = search.replace(new RegExp(c, "g"),
-                                    `<span style="color: ${color_g};">${c}</span>`
+                                    `<span style="color: ${color_g};">${c}</span>
+`
                                     )
             } else {
                 console.log("어떤 문자열도 포함되어 있지 않습니다.");
             }
         })
         */
-
   </script>
     
 </body>
